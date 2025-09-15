@@ -74,7 +74,12 @@ public:
 	{
 		Node* Current = GetNode(index);
 		if (Current != NULL)
-			InsertAfter(Current, value);
+		{ 
+			InsertAfter(Current, value); 
+			return true;
+		}
+		else
+			return false;
 	}
 	void InsertAtEnd(T value)
 	{

@@ -3,25 +3,28 @@
 
 #include <iostream>
 #include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
 using namespace std;
 int main()
 {
-	clsDblLinkedList<short> MyList;
-	cout << "\n is empty : " << MyList.IsEmpty() << endl;
+	clsMyQueue<short> Queue;
 
-	MyList.InsertAtBiginning(5);
-	MyList.InsertAtBiginning(4);
-	MyList.InsertAtBiginning(3);
-	MyList.InsertAtBiginning(2);
-	MyList.InsertAtBiginning(1);
+	Queue.push(10);
+	Queue.push(20);
+	Queue.push(30);
+	Queue.push(40);
 
-	
-	MyList.PrintList();
-	printf("\nSize of Linked List : %d\n", MyList.Size()); 
+	cout << "\n My Queue : ";
+	Queue.Print();
+	cout << "\n Size : " << Queue.Size();
+	cout << "\n Front : " << Queue.front();
+	cout << "\n Back : " << Queue.back();
 
-	MyList.InsertAfter(6, 500);
+	Queue.pop();
+	cout << "\n My Queue after pop : ";
+	Queue.Print();
 
-	MyList.PrintList();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
