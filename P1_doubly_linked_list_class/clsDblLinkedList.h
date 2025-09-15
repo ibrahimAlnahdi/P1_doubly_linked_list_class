@@ -70,7 +70,7 @@ public:
 
 	}
 	// extension 8
-	void InsertAfter(int index, T value)
+	bool InsertAfter(int index, T value)
 	{
 		Node* Current = GetNode(index);
 		if (Current != NULL)

@@ -39,5 +39,41 @@ public :
 	{
 		_MyList.PrintList();
 	}
+	// 1 git item extension 
+	T gitItem(int index)
+	{
+		return _MyList.GetItem(index);
+	}
+	 // reverse  Extension 2
+	void Reverse()
+	{
+		_MyList.Reverse();
+	}
+	// updateItem Extension 3
+	void UpdateItem(int index, T newValue)
+	{
+		_MyList.UpdateItem(index, newValue);
+	}
+	
+	// Extension 4 insert after 
+	bool InsertAfter(int index, T item)
+	{
+		return _MyList.InsertAfter(index, item);
+	}
+	// Extension 5 insert at fronn 
+	void InsertAtFront(T Item)
+	{
+		_MyList.InsertAtBiginning(Item);
+	}
+	//Extension  6 insert at back 
+	void InsertAtBack(T item)
+	{
+		_MyList.InsertAtEnd(item);
+	}
+	// Extension 7 clear 
+	void Clear()
+	{
+		_MyList.Clear();
+	}
 };
 

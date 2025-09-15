@@ -24,7 +24,26 @@ int main()
 	cout << "\n My Queue after pop : ";
 	Queue.Print();
 
+	cout << "\nitem(2) " << Queue.gitItem(2);
+	Queue.Reverse();
+	Queue.Print();
+	cout << "\nQueue after updateing item(2)  to 600 " ;
+	Queue.UpdateItem(2, 600);
+	Queue.Print();
+	Queue.InsertAfter(2, 800);
+	cout << "\nQueue after inserting 800 after item(2) : ";
+	Queue.Print();
+	Queue.InsertAtFront(100);
+	cout << "\nQueue after inserting 100 at front : ";
+	Queue.Print();
+	Queue.InsertAtBack(900);
+	cout << "\nQueue after inserting 900 at back : ";
+	Queue.Print();
+	Queue.Clear();
 
+	cout << "\nQueue after Clearing : ";
+	Queue.Print();
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
