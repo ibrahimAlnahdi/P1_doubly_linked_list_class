@@ -4,45 +4,46 @@
 #include <iostream>
 #include "clsDblLinkedList.h"
 #include "clsMyQueue.h"
+#include "clsMyStack.h"
 using namespace std;
 int main()
 {
-	clsMyQueue<short> Queue;
+	clsMyStack<short> Stack;
 
-	Queue.push(10);
-	Queue.push(20);
-	Queue.push(30);
-	Queue.push(40);
+	Stack.push(10);
+	Stack.push(20);
+	Stack.push(30);
+	Stack.push(40);
 
-	cout << "\n My Queue : ";
-	Queue.Print();
-	cout << "\n Size : " << Queue.Size();
-	cout << "\n Front : " << Queue.front();
-	cout << "\n Back : " << Queue.back();
+	cout << "\n My Stack : ";
+	Stack.Print();
+	cout << "\n Size : " << Stack.Size();
+	cout << "\n Front : " << Stack.Top();
+	cout << "\n Back : " << Stack.Bottom();
 
-	Queue.pop();
-	cout << "\n My Queue after pop : ";
-	Queue.Print();
+	Stack.pop();
+	cout << "\n My Stack after pop : \n";
+	Stack.Print();
 
-	cout << "\nitem(2) " << Queue.gitItem(2);
-	Queue.Reverse();
-	Queue.Print();
-	cout << "\nQueue after updateing item(2)  to 600 " ;
-	Queue.UpdateItem(2, 600);
-	Queue.Print();
-	Queue.InsertAfter(2, 800);
-	cout << "\nQueue after inserting 800 after item(2) : ";
-	Queue.Print();
-	Queue.InsertAtFront(100);
-	cout << "\nQueue after inserting 100 at front : ";
-	Queue.Print();
-	Queue.InsertAtBack(900);
-	cout << "\nQueue after inserting 900 at back : ";
-	Queue.Print();
-	Queue.Clear();
+	cout << "\nitem(2) : " << Stack.gitItem(2);
+	Stack.Reverse();
+	Stack.Print();
+	cout << "\nStack after updateing item(2)  to 600 \n" ;
+	Stack.UpdateItem(2, 600);
+	Stack.Print();
+	Stack.InsertAfter(2, 800);
+	cout << "\nStack after inserting 800 after item(2) : \n";
+	Stack.Print();
+	Stack.InsertAtFront(100);
+	cout << "\nStack after inserting 100 at front : \n";
+	Stack.Print();
+	Stack.InsertAtBack(900);
+	cout << "\nStack after inserting 900 at back : \n";
+	Stack.Print();
+	Stack.Clear();
 
-	cout << "\nQueue after Clearing : ";
-	Queue.Print();
+	cout << "\nStack after Clearing : ";
+	Stack.Print();
 	
 }
 
