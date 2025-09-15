@@ -7,16 +7,20 @@ using namespace std;
 int main()
 {
 	clsDblLinkedList<short> MyList;
+	cout << "\n is empty : " << MyList.IsEmpty() << endl;
+
+	MyList.InsertAtBiginning(5);
 	MyList.InsertAtBiginning(4);
 	MyList.InsertAtBiginning(3);
 	MyList.InsertAtBiginning(2);
 	MyList.InsertAtBiginning(1);
-	clsDblLinkedList<short>::Node* n = MyList.Find(3);
-	if (n != NULL)
-	{
-		cout << n->value<<"\n";
-	}
-	MyList.InsertAfter(n, 35);
+
+	
+	MyList.PrintList();
+	printf("\nSize of Linked List : %d\n", MyList.Size()); 
+
+	MyList.InsertAfter(6, 500);
+
 	MyList.PrintList();
 }
 
