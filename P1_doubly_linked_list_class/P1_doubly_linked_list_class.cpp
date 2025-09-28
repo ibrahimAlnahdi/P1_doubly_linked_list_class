@@ -5,46 +5,38 @@
 #include "clsDblLinkedList.h"
 #include "clsMyQueue.h"
 #include "clsMyStack.h"
+#include "clsMyDynamicArray.h"
 using namespace std;
 int main()
 {
-	clsMyStack<short> Stack;
+	clsMyDynamicArray<int> Array(5);
+	Array.setItem(0, 10);
+	Array.setItem(1, 20);
+	Array.setItem(2, 30);
+	Array.setItem(3, 40);
+	Array.setItem(4, 50);
 
-	Stack.push(10);
-	Stack.push(20);
-	Stack.push(30);
-	Stack.push(40);
+	cout << "\nis empty " << Array.IsEmpty();
+	cout << "\nsize : " << Array.Size();
+	cout << "\nArray items : " ;
 
-	cout << "\n My Stack : ";
-	Stack.Print();
-	cout << "\n Size : " << Stack.Size();
-	cout << "\n Front : " << Stack.Top();
-	cout << "\n Back : " << Stack.Bottom();
+	Array.Print();
+	Array.Resize(3);
+	cout << "\nsize : " << Array.Size();
+	cout << "\nArray items : ";
+	Array.Print();
 
-	Stack.pop();
-	cout << "\n My Stack after pop : \n";
-	Stack.Print();
+	Array.Resize(10);
+	cout << "\nsize : " << Array.Size();
+	cout << "\nArray items : ";
+	Array.Print();
+	cout << "\nitem 2 : " << Array.GetItem(2);
+	Array.Reverse();
+	Array.Print();
 
-	cout << "\nitem(2) : " << Stack.gitItem(2);
-	Stack.Reverse();
-	Stack.Print();
-	cout << "\nStack after updateing item(2)  to 600 \n" ;
-	Stack.UpdateItem(2, 600);
-	Stack.Print();
-	Stack.InsertAfter(2, 800);
-	cout << "\nStack after inserting 800 after item(2) : \n";
-	Stack.Print();
-	Stack.InsertAtFront(100);
-	cout << "\nStack after inserting 100 at front : \n";
-	Stack.Print();
-	Stack.InsertAtBack(900);
-	cout << "\nStack after inserting 900 at back : \n";
-	Stack.Print();
-	Stack.Clear();
 
-	cout << "\nStack after Clearing : ";
-	Stack.Print();
-	
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
