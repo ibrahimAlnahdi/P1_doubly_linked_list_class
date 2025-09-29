@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
-template <class T> 
+template <class T>
 class clsMyDynamicArray
 {
 protected:
@@ -41,6 +41,7 @@ public:
 		{
 			cout << OriginalArray[i] << " ";
 		}
+		cout << endl;
 	}
 	void Resize(int newSize)
 	{
@@ -48,7 +49,7 @@ public:
 			return;
 		if (newSize < 0)
 			newSize = 0;
-		
+
 		_TempArray = new T[newSize];
 		if (newSize < _Size)
 			_Size = newSize;
@@ -57,7 +58,7 @@ public:
 			_TempArray[i] = OriginalArray[i];
 		}
 		_Size = newSize;
-		delete OriginalArray;
+		delete[] OriginalArray;
 		OriginalArray = _TempArray;
 
 	}
@@ -73,17 +74,39 @@ public:
 		{
 			_TempArray[i] = OriginalArray[_Size - i - 1];
 		}
+		delete[] OriginalArray;
 		OriginalArray = _TempArray;
-		//delete _TempArray;
+
 	}
 	void clear()
 	{
-		delete OriginalArray;
 		_Size = 0;
-		OriginalArray = new T[0];
+		_TempArray = new T[0];
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
 	}
 
+	bool DeleteItemAt(int index)
+	{
+		if (index < 0 || index >= _Size)
+			return false;
+		_Size--;
+		_TempArray = new T[_Size];
+		// copy all befor index 
+		for (int i = 0; i < index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
 
+		// copy all after index;
+		for (int  i = index + 1 ; i < _Size + 1; i++)
+		{
+			_TempArray[i - 1] = OriginalArray[i];
+		}
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
 
 };
 

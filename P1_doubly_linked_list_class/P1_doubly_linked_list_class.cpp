@@ -21,18 +21,15 @@ int main()
 	cout << "\nArray items : " ;
 
 	Array.Print();
-	Array.Resize(3);
-	cout << "\nsize : " << Array.Size();
-	cout << "\nArray items : ";
-	Array.Print();
 
-	Array.Resize(10);
-	cout << "\nsize : " << Array.Size();
-	cout << "\nArray items : ";
-	Array.Print();
+	
 	cout << "\nitem 2 : " << Array.GetItem(2);
 	Array.Reverse();
 	Array.Print();
+	Array.DeleteItemAt(2);
+	Array.Print();
+	cout << "size : " << Array.Size();
+
 
 
 
