@@ -16,24 +16,31 @@ int main()
 	Array.setItem(3, 40);
 	Array.setItem(4, 50);
 
+
 	cout << "\nis empty " << Array.IsEmpty();
 	cout << "\nsize : " << Array.Size();
 	cout << "\nArray items : " ;
 
 	Array.Print();
-
-	
-	cout << "\nitem 2 : " << Array.GetItem(2);
-	Array.Reverse();
+	Array.InsertAt(1, 100);
 	Array.Print();
-	Array.DeleteItemAt(2);
+	Array.DeleteFirstItem();
+	
+	
+	
 	Array.Print();
 	cout << "size : " << Array.Size();
 
 
+	Array.DeleteLastItem();
+	Array.Print();
+	int index = Array.Find(100);
+	index == -1 ? cout << "\nthe value is not found" : cout << "\n found at " << index;
 
+	cout<<endl<<Array.DeleteItem(30);
+	Array.Print();
 
-
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

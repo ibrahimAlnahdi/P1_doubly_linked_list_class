@@ -37,11 +37,11 @@ public:
 	}
 	void Print()
 	{
+		cout << endl;
 		for (int i = 0; i < _Size; i++)
 		{
 			cout << OriginalArray[i] << " ";
 		}
-		cout << endl;
 	}
 	void Resize(int newSize)
 	{
@@ -102,6 +102,47 @@ public:
 		for (int  i = index + 1 ; i < _Size + 1; i++)
 		{
 			_TempArray[i - 1] = OriginalArray[i];
+		}
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+		return true;
+	}
+
+	bool DeleteFirstItem()
+	{
+		return DeleteItemAt(0);
+	}
+	bool DeleteLastItem()
+	{
+		return DeleteItemAt(_Size - 1);
+	}
+	int Find(T value)
+	{
+		for (int  i = 0; i < _Size; i++)
+		{
+			if (OriginalArray[i] == value)
+				return i;
+		}
+		return -1;
+	}
+	bool DeleteItem(T value)
+	{
+		return  DeleteItemAt(Find(value));
+	}
+	bool InsertAt(int index, T value)
+	{
+		if (index > _Size || index < 0)
+			return false;
+		_Size++;
+		_TempArray = new T[_Size];
+		for (int i = 0; i < index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+		_TempArray[index] = value;
+		for (int i = index ; i < _Size -1 ; i++)
+		{
+			_TempArray[i + 1 ] = OriginalArray[i ];
 		}
 		delete[] OriginalArray;
 		OriginalArray = _TempArray;
